@@ -1,0 +1,65 @@
+.NavBar_main{
+    background:#032541;
+    color: #fff;
+}
+
+.NavTitle{
+    color: #fff;
+    font-size:30px;
+    text-decoration: none;
+    padding-left: 70px;
+}
+.NavTitle:hover{
+    color: #fff;
+    font-size:30px;
+    text-decoration: none;
+}
+.nav-item{
+    color: #fff;
+    font-size: 19px;
+    margin: 4px 30px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.nav-item:hover{
+    color: #fff;
+    font-size: 19px;
+    margin: 4px 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nabburger{
+    color: #fff;
+}
+.Burger{
+    display: none;
+}
+
+@media screen and (max-width: 980px) {
+    .NavTitle{
+        color: #fff;
+        font-size:30px;
+        text-decoration: none;
+        padding-left: 0px;
+    }
+    .nav-item{
+        color: #fff;
+        font-size: 19px;
+        margin: 4px 0px;
+        text-decoration: none;
+        font-weight: bold;
+    
+    }
+    .nav-item:hover{
+        color: #fff;
+        font-size: 19px;
+        margin: 4px 0px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .Burger{
+        display: block;
+    }
+  }
+  

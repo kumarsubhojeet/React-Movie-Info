@@ -1,0 +1,58 @@
+.detail_main{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.deatil_img_section{
+    width: 100%;
+}
+.detail_img{
+    width: 100%;
+    height: auto;
+}
+.deatils{
+    text-align: right;
+    width: 100%;
+}
+.calander{
+    color: green;
+}
+.pro_img{
+    max-height: 200px;
+    min-height: 200px
+}
+.overView{
+    width: 100%;
+    margin: 0 auto;
+    text-align: right;
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .detail_main{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        display: grid;
+        justify-content: space-between;
+    }
+    .detail_img{
+        width: 100%;
+        height: auto;
+    }
+    .deatils{
+        text-align: center;
+    }
+    .calander{
+        color: green;
+    }
+    .overView{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+}
