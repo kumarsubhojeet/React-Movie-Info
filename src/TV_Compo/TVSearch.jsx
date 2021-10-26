@@ -14,7 +14,7 @@ export default function SearchMovies() {
   const btnclick = async () => {
     try {
       const res = await axios.get(
-        ` https://api.themoviedb.org/3/search/movie?api_key=${KEY}&language=en-US&query=${name}&page=1&include_adult=false`
+        ` https://api.themoviedb.org/3/search/tv?api_key=${KEY}&language=en-US&page=1&query=${name}&include_adult=false`
       );
       setmovies(res.data.results);
     } catch (error) {
@@ -28,13 +28,13 @@ export default function SearchMovies() {
 
   return (
     <div>
-      <div className="Search_main">
+      <div className="TV_Search_main">
         <div className="row">
           {movies.map((mov) => (
             <div className="col-md-3">
-              <div class="card Search_main_card" style={{ width: "18rem" }}>
+              <div class="card TV_Search_main" style={{ width: "18rem" }}>
                 
-              <Link to={`/Detail/${mov.id}`}>
+              <Link to={`/TVDetails/${mov.id}`}>
                 <img
                   class="card-img-top"
                   src={IMG_API + mov.poster_path}
@@ -46,8 +46,8 @@ export default function SearchMovies() {
                   </div>
 
                   <div class="card-body">
-                    <h5 class="card-text" style={{fontWeight:'700', color:'#032541', textAlign:'justify'}}>{mov.title}</h5>
-                    <h5 class="card-text" style={{fontWeight:'500', textAlign:'justify'}}>{mov.release_date}</h5>
+                    <h5 class="card-text" style={{fontWeight:'700', color:'#032541', textAlign:'justify'}}>{mov.name}</h5>
+                    <h5 class="card-text" style={{fontWeight:'500', textAlign:'justify'}}>{mov.first_air_date}</h5>
                   </div>
                 </div>
               </div>

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import NumberFormat from "react-number-format";
-
+import Carousel from "react-elastic-carousel";
+import {Link} from 'react-router-dom'
 import "../Css/Detail.css";
 
 export default function DetailPage() {
@@ -12,12 +13,17 @@ export default function DetailPage() {
   const [geners, setgeners] = useState([]);
   const [production, setproduction] = useState([]);
   const [lang , setlang] = useState([]);
+  const [recommended,setrecommended] = useState([]);
+
+  const [simlatm , setsimilar] = useState([]);
+  const KEY = process.env.REACT_APP_KEY
+
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
   const Apicall = async () => {
     try {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=15cf9d24c8884ffaa720aecd385ca9e1&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY}&language=en-US`
       );
       setmovies(res.data);
       setgeners(res.data.genres);
@@ -28,9 +34,27 @@ export default function DetailPage() {
     }
   };
 
+  const Similar = async()=>{
+    try {
+      const res = await axios.get(` https://api.themoviedb.org/3/movie/${id}/similar?api_key=15cf9d24c8884ffaa720aecd385ca9e1&language=en-US&page=1`)
+      setsimilar(res.data.results);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
   useEffect(() => {
     Apicall();
+    Similar();
   }, []);
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 2 },
+    { width: 1200, itemsToShow: 2 },
+  ];
 
   return (
     <div>
@@ -42,6 +66,46 @@ export default function DetailPage() {
             alt="Error"
           />
           <a href={movies.homepage} style={{textDecoration:'none'}} target="_blank" without rel="noreferrer"><h2 style={{ fontWeight: "700" , textDecoration:'none' , color: 'Green' }}>Watch Now</h2></a>
+       
+       <hr />
+
+       <div className="similar_tv_shows">
+          <h2 style={{ fontWeight: "700" }}>Similar Shows</h2>
+            <Carousel
+              breakPoints={breakPoints}
+              pagination={false}
+             
+              infinite={true}
+            >
+              {simlatm.map((item) => (
+                <div class="card" style={{ width: "18rem" }} key={item.id}>
+                  
+                  <Link to={`/TVDetails/${item.id}`}>
+                  <img
+                    class="card-img-top"
+                    src={IMG_API + item.poster_path}
+                    alt="Error"
+                  />
+                  </Link>
+
+<div className="details">
+                  <div className="rating">
+                  <h3>{item.vote_average}</h3>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-text" style={{fontWeight:'700', color:'#032541', textAlign:'justify'}}>{item.title}</h5>
+                    <h5 class="card-text" style={{fontWeight:'500', textAlign:'justify'}}>{item.release_date}</h5>
+                  </div>
+                </div>
+                </div>
+              ))}
+            </Carousel>
+        
+        </div>
+
+        <hr />
+       
         </div>
 
         <div className="deatils">
@@ -140,6 +204,41 @@ export default function DetailPage() {
           </div>
         </div>
       </div>
+
+      <div className="similar_tv_shows2">
+          <h2 style={{ fontWeight: "700" }}>Similar Shows</h2>
+            <Carousel
+              breakPoints={breakPoints}
+              pagination={false}
+             
+              infinite={true}
+            >
+              {simlatm.map((item) => (
+                <div class="card" style={{ width: "18rem" }} key={item.id}>
+                  
+                  <Link to={`/TVDetails/${item.id}`}>
+                  <img
+                    class="card-img-top"
+                    src={IMG_API + item.poster_path}
+                    alt="Error"
+                  />
+                  </Link>
+
+<div className="details">
+                  <div className="rating">
+                  <h3>{item.vote_average}</h3>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-text" style={{fontWeight:'700', color:'#032541', textAlign:'justify'}}>{item.title}</h5>
+                    <h5 class="card-text" style={{fontWeight:'500', textAlign:'justify'}}>{item.release_date}</h5>
+                  </div>
+                </div>
+                </div>
+              ))}
+            </Carousel>
+        
+        </div>
 
      
     </div>

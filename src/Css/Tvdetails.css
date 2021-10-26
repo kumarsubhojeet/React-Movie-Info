@@ -1,0 +1,26 @@
+.recommended_tv_shows2{
+    display: none;
+}
+.similar_tv_shows2{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .recommended_tv_shows2{
+        display: block;
+    }
+    .similar_tv_shows2{
+        display: block;
+    }
+
+    .recommended_tv_shows{
+        display: none;
+    }
+    .similar_tv_shows{
+        display: none;
+    }
+    
+    
+}

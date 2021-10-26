@@ -12,41 +12,46 @@
     font-weight: 600;
 }
 .card-img-top{
-    border-radius: 22px 22px 5px 5px; 
+    border-radius: 22px 22px 5px 5px;
+    
 }
 .card{
     border-radius: 22px 22px 22px 22px;
     border: transparent !important;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    
+    box-shadow: hsla(0, 0%, 0%, 0.1) 0px 4px 12px;
+    margin: 10px 15px;
+    max-height: auto !important;
 }
 .card-body{
 }
 .rec.rec-arrow {
     border-radius: 30%;
-    background: #032541;
-    color: #fff;
+    background: transparent;
+    color: #000;
+    border:2px solid white !important;
 }
 /* round buttons on hover */
 .rec.rec-arrow:hover {
     border-radius: 30%;
-    background:  #3498db  !important;
-    color: #fff !important;
+    background:  transparent  !important;
+    color: #000 !important;
+    border:2px solid gray !important;
 }
 
 .rating{
     margin: 0 auto;
     text-align: left; 
-    border-radius:50%;
     padding-left: 14px;
+ 
     
 }
 .rating h3{
     padding: 10px;
-    width: 23%;
-    border-radius: 50%;
+    width: 27%;
+    text-align:center;
+    border-radius: 100%;
     background: #fff;
-    color: #000 !important;
+    color: #032541 !important;
     margin-top: -25px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
@@ -61,7 +66,7 @@
     }
     .rating h3{
         padding: 10px;
-        width: 26%;
+        width: 27%;
         border-radius: 50%;
         background: #fff;
         color: #000 !important;

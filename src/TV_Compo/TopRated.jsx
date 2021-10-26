@@ -7,14 +7,14 @@ import "../Css/Popmovies.css";
 
 export default function PopularMovies() {
   const [movies, setmovies] = useState([]);
-
-  const IMG_API = "https://image.tmdb.org/t/p/w1280";
   const KEY = process.env.REACT_APP_KEY
 
+
+  const IMG_API = "https://image.tmdb.org/t/p/w1280";
   const Api = async () => {
     try {
       const res = await axios.get(
-        ` https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&language=en-US&page=1`
+        ` https://api.themoviedb.org/3/tv/top_rated?api_key=${KEY}&language=en-US&page=1`
       );
       setmovies(res.data.results);
       console.log(res.data.results[0].poster_path);
@@ -38,24 +38,25 @@ export default function PopularMovies() {
     <div>
       <div className="pop_mov">
         <div className="pop_heading">
-          <h3>Upcomming Movies</h3>  </div>
+          <h3>Top Rated Shows</h3>  </div>
 
           <div className="section_pop">
             <Carousel
               breakPoints={breakPoints}
               pagination={false}
-              
+             
               infinite={true}
             >
               {movies.map((item) => (
                 <div class="card" style={{ width: "18rem" }} key={item.id}>
                   
-                  <Link to={`/Detail/${item.id}`}>
+                  <Link to={`/TVDetails/${item.id}`}>
                   <img
                     class="card-img-top"
                     src={IMG_API + item.poster_path}
                     alt="Error"
-                  /> </Link>
+                  />
+                  </Link>
 
 <div className="details">
                   <div className="rating">
@@ -63,8 +64,8 @@ export default function PopularMovies() {
                   </div>
 
                   <div class="card-body">
-                    <h5 class="card-text" style={{fontWeight:'700', color:'#032541', textAlign:'justify'}}>{item.title}</h5>
-                    <h5 class="card-text" style={{fontWeight:'500', textAlign:'justify'}}>{item.release_date}</h5>
+                    <h5 class="card-text" style={{fontWeight:'700', color:'#032541', textAlign:'justify'}}>{item.name}</h5>
+                    <h5 class="card-text" style={{fontWeight:'500', textAlign:'justify'}}>{item.first_air_date}</h5>
                   </div>
                 </div>
                 </div>

@@ -8,11 +8,13 @@ import "../Css/Popmovies.css";
 export default function PopularMovies() {
   const [movies, setmovies] = useState([]);
 
+  const KEY = process.env.REACT_APP_KEY
+
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
   const Api = async () => {
     try {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=15cf9d24c8884ffaa720aecd385ca9e1&language=en-US&page=1&region=IN`
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${KEY}&language=en-US&page=1&region=IN`
       );
       setmovies(res.data.results);
       console.log(res.data.results[0].poster_path);
@@ -36,15 +38,13 @@ export default function PopularMovies() {
     <div>
       <div className="pop_mov">
         <div className="pop_heading">
-          <h3>In Theater Now</h3>  </div>
+          <h3>In Theater Movies</h3>  </div>
 
           <div className="section_pop">
             <Carousel
               breakPoints={breakPoints}
               pagination={false}
-              easing="cubic-bezier(1,.15,.55,1.54)"
-              tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
-              transitionMs={110}
+             
               infinite={true}
             >
               {movies.map((item) => (

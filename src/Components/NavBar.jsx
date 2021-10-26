@@ -24,13 +24,13 @@ export default function NavBar() {
         </h3>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <Link class="nav-item active" to="/">
-              Home <span class="sr-only">(current)</span>
+            <Link class="nav-item active" to="About">
+              About <span class="sr-only">(current)</span>
             </Link>
-            <Link class="nav-item" to="/">
+            <Link class="nav-item" to="/TV">
               TV
             </Link>
-            <Link class="nav-item" to="/">
+            <Link class="nav-item" to="/Home">
               Movies
             </Link>
           </div>

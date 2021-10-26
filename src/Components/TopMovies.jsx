@@ -9,10 +9,12 @@ export default function PopularMovies() {
   const [movies, setmovies] = useState([]);
 
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
+  const KEY = process.env.REACT_APP_KEY
+
   const Api = async () => {
     try {
       const res = await axios.get(
-        ` https://api.themoviedb.org/3/movie/top_rated?api_key=15cf9d24c8884ffaa720aecd385ca9e1&language=en-US&page=1`
+        ` https://api.themoviedb.org/3/movie/top_rated?api_key=${KEY}&language=en-US&page=1`
       );
       setmovies(res.data.results);
       console.log(res.data.results[0].poster_path);
@@ -42,9 +44,7 @@ export default function PopularMovies() {
             <Carousel
               breakPoints={breakPoints}
               pagination={false}
-              easing="cubic-bezier(1,.15,.55,1.54)"
-              tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
-              transitionMs={1000}
+             
               infinite={true}
             >
               {movies.map((item) => (

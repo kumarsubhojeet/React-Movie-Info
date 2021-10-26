@@ -28,7 +28,16 @@
     margin: 0 auto;
     text-align: right;
 }
-
+.seasons{
+    margin: 0 auto;
+}
+.TvDetail_card{
+    border-radius: 22px 22px 22px 22px;
+    border: transparent !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 10px auto;
+    max-height: 35rem;
+}
 
 
 @media screen and (max-width: 980px) {
@@ -44,7 +53,10 @@
         height: auto;
     }
     .deatils{
+        width: 100%;
         text-align: center;
+        margin: 0 auto;
+        display: grid
     }
     .calander{
         color: green;
