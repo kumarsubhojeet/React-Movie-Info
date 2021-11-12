@@ -1,6 +1,5 @@
 Live WebSite:--- https://sk-movies07.netlify.app/
 
-![image](https://user-images.githubusercontent.com/60726609/138866815-29953e33-ba53-4557-ac68-1bd02026da2b.png)
-![image](https://user-images.githubusercontent.com/60726609/138866892-eb1ee337-666a-42bb-aa9a-e656979237a6.png)
-![image](https://user-images.githubusercontent.com/60726609/138866964-75747814-f233-44ab-9d22-e13b24cb3df1.png)
-![image](https://user-images.githubusercontent.com/60726609/138867012-c343e9c7-c240-4893-ac26-b99764d51213.png)
+
+![screencapture-sk-movies07-netlify-app-2021-11-12-23_02_43](https://user-images.githubusercontent.com/60726609/141509893-e003da10-e46e-4a31-8870-47db7de5acc1.png)
+![screencapture-sk-movies07-netlify-app-Detail-566525-2021-11-12-23_04_04 (1)](https://user-images.githubusercontent.com/60726609/141510254-3afe9344-0ce1-4ae4-be5e-0d8781417a90.png)
